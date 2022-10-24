@@ -18,6 +18,6 @@ class ImportedDataController extends Controller
             $csvFileService->csvDataListFiltering($query, $request->search);
         }
         
-        return response()->json($query->simplePaginate($request->page_size));
+        return response()->json($this->successResponse($query->simplePaginate($request->page_size)));
     }
 }
